@@ -5,4 +5,6 @@
     <string name="perim">Voir les produits en fin de validité</string>
     <string name="recettes">Voir les recettes</string>
     <string name="scan">Scan</string>
+    <string name="nomBase">Ma Base</string>
+
 </resources>
