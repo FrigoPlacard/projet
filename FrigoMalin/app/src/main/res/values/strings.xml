@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">FrigoMalin</string>
+    <string name="bouton">Visiter les placards</string>
+    <string name="course">Voir la liste de course</string>
+    <string name="perim">Voir les produits en fin de validité</string>
+    <string name="recettes">Voir les recettes</string>
+    <string name="scan">Scan</string>
     <string name="nomBase">Ma Base</string>
+
 </resources>

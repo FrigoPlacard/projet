@@ -1,7 +1,9 @@
 package com.example.ensai.frigomalin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -56,4 +58,9 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
 
     }
+
+    public void cliqueScan(View v){
+        startActivity(new Intent(MainActivity.this, ScannerCodeBarre.class));
+    }
+
 }

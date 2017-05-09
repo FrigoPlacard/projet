@@ -20,14 +20,31 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="teste"/>
+        android:text="@string/bouton"
+        android:id="@+id/boutonvisite"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/monbouton"
-        />
-<ImageButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@android:drawable/ic_input_add"/>
+        android:text="@string/course"
+        android:id="@+id/boutoncourses"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/perim"
+        android:id="@+id/boutonperim"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recettes"
+        android:id="@+id/boutonrecettes"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ajouter produits"
+        android:id="@+id/ajouterProduit"
+        android:onClick="cliqueScan"/>
+
+
+
 </LinearLayout>
