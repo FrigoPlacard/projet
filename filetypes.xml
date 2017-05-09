@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping pattern="drawable" type="XML" />
+      <mapping pattern="monbouton" type="XML" />
     </extensionMap>
   </component>
 </application>
