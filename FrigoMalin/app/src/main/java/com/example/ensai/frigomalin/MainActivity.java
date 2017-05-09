@@ -11,6 +11,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,11 +34,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         //response.substring(0,500);
-                        Toast.makeText(MainActivity.this, "Newtask", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "J'ai réussi à lire l'url", Toast.LENGTH_SHORT).show();
+                        try{
+                            JSONObject j = new JSONObject(response);
+                            JSONObject a = j.getJSONObject("code");
+                            Toast.makeText(MainActivity.this, a.toString(), Toast.LENGTH_SHORT).show();
+
+                        }
+                        catch(Exception e){
+                            Toast.makeText(MainActivity.this, "pb", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this, "Je n'ai pas réussi à lire l'url", Toast.LENGTH_SHORT).show();
 
             }
         });
