@@ -10,11 +10,11 @@ public class Element {
 
     private long codeBarre;
     private String nom;
-    private double quantite;
+    private String quantite;
     private Date datePeremption;
     private TypeNourriture typeNourriture;
 
-    public Element(long codeBarre, String nom, double quantite, Date datePeremption, TypeNourriture typeNourriture) {
+    public Element(long codeBarre, String nom, String quantite, Date datePeremption, TypeNourriture typeNourriture) {
         this.codeBarre = codeBarre;
         this.nom = nom;
         this.quantite = quantite;
@@ -30,7 +30,7 @@ public class Element {
         return nom;
     }
 
-    public double getQuantite() {
+    public String getQuantite() {
         return quantite;
     }
 
