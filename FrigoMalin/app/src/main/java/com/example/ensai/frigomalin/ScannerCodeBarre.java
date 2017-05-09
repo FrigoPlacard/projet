@@ -39,6 +39,9 @@ public class ScannerCodeBarre extends AppCompatActivity {
             String scanFormat = scanningResult.getFormatName();
             formatTxt.setText("FORMAT: " + scanFormat);
             contentTxt.setText("CONTENT: " + scanContent);
+            Intent i = new Intent(this, LireURL.class);
+            i.putExtra("code",scanContent);
+            startActivity(i);
         }
         else{
             Toast toast = Toast.makeText(getApplicationContext(),
