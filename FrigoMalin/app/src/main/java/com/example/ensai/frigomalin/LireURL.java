@@ -45,7 +45,7 @@ public class LireURL extends AppCompatActivity {
                             if(statut.contentEquals("product found")) {
 
                                 String a = (String) j.get("code");
-                                
+
                                 Toast.makeText(LireURL.this, a, Toast.LENGTH_SHORT).show();
                             }
                             else{
