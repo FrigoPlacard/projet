@@ -11,25 +11,19 @@
     tools:context="com.example.ensai.frigomalin.LireURL">
 
 
-
-
-    <DatePicker
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/datePicker">
-    </DatePicker>
+        android:text="@string/ajout_date"
+        android:id="@+id/bDate"
+        android:onClick="onClick"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="datetime"
+        android:inputType="date"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/txtDate"
         android:layout_weight="1" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ajout_date"/>
 
 </LinearLayout>
