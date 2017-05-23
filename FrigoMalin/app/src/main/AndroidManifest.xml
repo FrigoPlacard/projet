@@ -18,7 +18,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScannerCodeBarre" />
+<<<<<<< HEAD
         <activity android:name=".LireURL" />
+=======
+        <activity android:name=".LireURL"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+>>>>>>> 246c51303bcb55e9cf4ca8875f76997b3e49c4be
     </application>
 
 </manifest>
