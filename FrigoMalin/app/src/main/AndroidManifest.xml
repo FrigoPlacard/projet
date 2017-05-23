@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScannerCodeBarre" />
-        <activity android:name=".LireURL"></activity>
+        <activity android:name=".LireURL" />
     </application>
 
 </manifest>
