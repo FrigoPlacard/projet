@@ -2,7 +2,10 @@ package com.example.ensai.frigomalin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.DatePicker;
 import android.widget.Toast;
+import java.util.Calendar;
+import java.util.Date;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 public class LireURL extends AppCompatActivity {
+    DatePicker datePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +48,13 @@ public class LireURL extends AppCompatActivity {
                             String statut = (String) j.get("status_verbose");
                             if(statut.contentEquals("product found")) {
 
-                                String a = (String) j.get("code");
+                                String code = (String) j.get("code");
+                                String nomProduit = (String) j.get("product_name");
+                                String categorie = (String) j.get("pnns_groups_1");
+                                String quantite = (String) j.get("quantity");
 
-                                Toast.makeText(LireURL.this, a, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LireURL.this, nomProduit, Toast.LENGTH_SHORT).show();
+
                             }
                             else{
                                 Toast.makeText(LireURL.this, "produit not found", Toast.LENGTH_SHORT).show();
@@ -62,13 +70,21 @@ public class LireURL extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(LireURL.this, "Je n'ai pas réussi à lire l'url", Toast.LENGTH_SHORT).show();
 
+
             }
         });
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
 
         setContentView(R.layout.activity_lire_url);
+        Calendar calendar =  Calendar.getInstance();
+        datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Date datePeremption = new Date(view.getMonth()+"/"+view.getDayOfMonth()+"/"+view.getYear());
 
+            }
+        });
 
     }
 }

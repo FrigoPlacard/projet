@@ -11,6 +11,14 @@
     tools:context="com.example.ensai.frigomalin.LireURL">
 
 
+
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker">
+    </DatePicker>
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

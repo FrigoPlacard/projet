@@ -13,14 +13,18 @@ import com.example.ensai.frigomalin.R;
 public class BaseHelper extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "";
+    private static final String DATABASE_NAME = "MaData";
 
     public BaseHelper(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL("CREATE TABLE frigo " +
+                "(ID integer primary kez autoincrement," +
+                " nom TEXT," +
+                "categorie TEXT," +
+                "date DATE");
     }
 
     @Override
