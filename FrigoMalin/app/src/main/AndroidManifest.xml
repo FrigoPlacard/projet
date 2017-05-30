@@ -18,12 +18,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScannerCodeBarre" />
-
         <activity android:name=".LireURL" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity android:name=".Ajout_element"></activity>
     </application>
 
 </manifest>

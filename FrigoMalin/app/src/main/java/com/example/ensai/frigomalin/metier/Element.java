@@ -22,6 +22,15 @@ public class Element {
         this.typeNourriture = typeNourriture;
     }
 
+    public Element( String nom, String quantite, Date datePeremption, TypeNourriture typeNourriture) {
+        this.nom = nom;
+        this.quantite = quantite;
+        this.datePeremption = datePeremption;
+        this.typeNourriture = typeNourriture;
+    }
+
+
+
     public long getCodeBarre() {
         return codeBarre;
     }

@@ -7,5 +7,9 @@
     <string name="scan">Scan</string>
     <string name="nomBase">Ma Base</string>
     <string name="ajout_date">Définir la date</string>
+    <string name="nom">Nom</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="quantite">Quantité</string>
+
 
 </resources>
