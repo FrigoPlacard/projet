@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.example.ensai.frigomalin.metier.Element;
+
 import java.util.Calendar;
 
 public class Ajout_element extends AppCompatActivity implements View.OnClickListener {
@@ -46,6 +48,10 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
 
     }
 
+
+    public static void ajouter(View v){
+        Element element = new Element();
+    }
 
     protected Dialog onCreateDialog(int id) {
         if (id == DIALOG_ID) {

@@ -2,6 +2,7 @@ package com.example.ensai.frigomalin;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ import java.util.Calendar;
 
 public class LireURL extends AppCompatActivity implements View.OnClickListener {
     Button bDate;
-    EditText txtDate;
+    EditText txtDate, nom;
     int year_x,month_x,day_x;
     static final int DIALOG_ID=0;
 
@@ -58,20 +59,26 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
                             JSONObject j = new JSONObject(response);
                             String statut = (String) j.get("status_verbose");
                             if (statut.contentEquals("product found")) {
-
+                                JSONObject p = (JSONObject) j.get("product");
                                 String code = (String) j.get("code");
-                                String nomProduit = (String) j.get("product_name");
-                                String categorie = (String) j.get("pnns_groups_1");
-                                String quantite = (String) j.get("quantity");
+                                String nomProduit = (String) p.get("product_name");
+                                String categorie = (String) p.get("pnns_groups_1");
+                                String quantite = (String) p.get("quantity");
 
                                 Toast.makeText(LireURL.this, nomProduit, Toast.LENGTH_SHORT).show();
+                                nom = (EditText)findViewById(R.id.nom);
+                                nom.setText(nomProduit + " "+quantite);
+
+
 
                             } else {
                                 Toast.makeText(LireURL.this, "produit not found", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (Exception e) {
-                            Toast.makeText(LireURL.this, "pb", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(LireURL.this,ScannerCodeBarre.class);
+                            Toast.makeText(LireURL.this, "Réessayez", Toast.LENGTH_SHORT).show();
+                            startActivity(i);
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -91,11 +98,16 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
         year_x = c.get(Calendar.YEAR);
 
 
-        setContentView(R.layout.activity_lire_url);
+        setContentView(R.layout.activity_ajout_element);
 
         showDialogOnButtonClick();
     }
 
+
+    public void ajouter(View v){
+        Ajout_element.ajouter(v);
+
+    }
     public void showDialogOnButtonClick(){
         bDate = (Button)findViewById(R.id.bDate);
         txtDate = (EditText)findViewById(R.id.txtDate);
