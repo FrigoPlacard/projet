@@ -2,20 +2,31 @@ package com.example.ensai.frigomalin;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-import com.example.ensai.frigomalin.metier.Element;
+import com.example.ensai.frigomalin.DAO.ProduitDAO;
+import com.example.ensai.frigomalin.data.BaseHelper;
+import com.example.ensai.frigomalin.metier.Produit;
 
+import java.util.Date;
 import java.util.Calendar;
+
+import static java.lang.Integer.parseInt;
 
 public class Ajout_element extends AppCompatActivity implements View.OnClickListener {
     Button bDate;
     EditText txtDate;
+    EditText nom,quantite;
+    Spinner categorie;
     int year_x,month_x,day_x;
     static final int DIALOG_ID=0;
 
@@ -49,8 +60,18 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public static void ajouter(View v){
-        Element element = new Element();
+    public void ajouter(View v){
+        nom = (EditText)findViewById(R.id.nom);
+        quantite = (EditText)findViewById(R.id.quantite);
+        Date date = new Date((month_x+1) + "/" + day_x + "/" + year_x);
+        Produit produit= new Produit(nom.getText().toString(),Integer.parseInt(quantite.getText().toString()),date,"viande");
+        ProduitDAO produitDAO= new ProduitDAO();
+        produitDAO.create(produit);
+
+        Toast.makeText(Ajout_element.this, "element ajouté", Toast.LENGTH_SHORT).show();
+
+        finish();
+
     }
 
     protected Dialog onCreateDialog(int id) {

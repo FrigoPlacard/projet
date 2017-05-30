@@ -10,5 +10,7 @@ public enum TypeNourriture {
     Viande,
     Poisson,
     Boisson,
-    PainCereale
+    PainCereale,
+    sauce,
+    platPrepare
 }
