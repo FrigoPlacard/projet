@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     public void cliqueScan(View v){
         startActivity(new Intent(MainActivity.this, ScannerCodeBarre.class));
     }
+
+    public void cliqueListe(View v){
+        startActivity(new Intent(MainActivity.this, ListeCours.class));
+    }
+
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;

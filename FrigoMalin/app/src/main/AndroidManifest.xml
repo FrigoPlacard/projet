@@ -22,17 +22,16 @@
             android:configChanges="locale"
         </activity>
         <activity android:name=".LireURL">
-            android:configChanges="locale"
-        </activity>
+            android:configChanges="locale"</activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-
         <activity android:name=".Ajout_element" />
         <activity android:name=".VoirPlacard" />
-        <activity android:name=".VoirProduit"></activity>
+        <activity android:name=".VoirProduit" />
+        <activity android:name=".ListeCours"></activity>
     </application>
 
 </manifest>

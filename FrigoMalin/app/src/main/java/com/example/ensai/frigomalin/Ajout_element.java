@@ -72,7 +72,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
         Toast.makeText(Ajout_element.this, "element ajouté", Toast.LENGTH_SHORT).show();
 
         finish();
-        
+
     }
 
     protected Dialog onCreateDialog(int id) {
