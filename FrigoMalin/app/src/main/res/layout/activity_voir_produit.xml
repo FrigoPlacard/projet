@@ -18,6 +18,31 @@
         android:textSize="25dp"
         android:textColor="@android:color/black"
         android:id="@+id/nom_produit_2"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantite"/>
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantite_prod"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@android:color/black"
+        android:id="@+id/categorie"/>
 
     <TextView
         android:text="TextView"
@@ -27,20 +52,17 @@
         android:textColor="@android:color/black"
         android:id="@+id/date_produit_2"/>
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/url"
+        android:autoLink="web"/>
+
     <Space
         android:layout_width="16dp"
         android:layout_height="8dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/supprimer"
-        android:textColor="@android:color/white"
-        android:id="@+id/supprimer"
-        android:background="@android:color/holo_red_dark"/>
-    <Space
-        android:layout_width="16dp"
-        android:layout_height="8dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -48,7 +70,22 @@
         android:text="@string/ajouter_produit"
         android:textColor="@android:color/white"
         android:id="@+id/ajouter_produit"
+        android:onClick="ajouter_prod"
         android:background="@android:color/holo_green_dark"/>
+    <Space
+        android:layout_width="16dp"
+        android:layout_height="8dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/supprimer"
+        android:textColor="@android:color/white"
+        android:id="@+id/supprimer"
+        android:onClick="supprimer"
+        android:background="@android:color/holo_red_dark"/>
+
+
+
 
 
     

@@ -75,6 +75,10 @@ public class VoirPlacard extends AppCompatActivity {
                 Produit produit = produits.get(position);
                 i.putExtra("nom",produit.getNom());
                 i.putExtra("date",produit.getDatePeremption().getTime());
+                i.putExtra("categorie",produit.getTypeNourriture());
+                i.putExtra("url",produit.getUrl());
+                i.putExtra("quantite",produit.getQuantite());
+                i.putExtra("id",produit.getId());
 
                 startActivity(i);
 

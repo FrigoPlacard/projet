@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -29,9 +30,10 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
     Button bDate;
     EditText txtDate, nom, quantite;
     int year_x,month_x,day_x;
+    private Spinner categorie;
     static final int DIALOG_ID=0;
 
-    String[] mois= getResources().getStringArray(R.array.mois) /*{"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"}*/;
+     /*{"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"}*/;
 
 
     @Override
@@ -104,6 +106,7 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
 
 
         setContentView(R.layout.activity_ajout_element);
+        categorie = (Spinner) findViewById(R.id.monSpinner);
 
         showDialogOnButtonClick();
     }
@@ -112,13 +115,27 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
     public void ajouter(View v){
         nom = (EditText)findViewById(R.id.nom);
         quantite = (EditText)findViewById(R.id.quantite);
-        Date date = new Date((month_x+1) + "/" + day_x + "/" + year_x);
-        Produit produit= new Produit(nom.getText().toString(),Integer.parseInt(quantite.getText().toString()),date,"viande");
-        ProduitDAO produitDAO= new ProduitDAO(this);
-        produitDAO.create(produit);
+        if(quantite.getText().toString().isEmpty()) {
+            Toast.makeText(LireURL.this, "Rentrer quantité", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String[] type = getResources().getStringArray(R.array.monSpinner);
+            int pos = categorie.getSelectedItemPosition();
+            String cat = type[pos];
+            Date date = new Date((month_x + 1) + "/" + day_x + "/" + year_x);
+            Bundle b = getIntent().getExtras();
+            String code = b.getString("code");
+            String url = "https://fr.openfoodfacts.org/produit/" + code;
+            Produit produit = new Produit(nom.getText().toString(), Integer.parseInt(quantite.getText().toString()), date, cat, url);
+            ProduitDAO produitDAO = new ProduitDAO(this);
+            produitDAO.create(produit);
+            Toast.makeText(LireURL.this, "Produit ajouté", Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
     }
     public void showDialogOnButtonClick(){
+        String[] mois= getResources().getStringArray(R.array.mois);
         bDate = (Button)findViewById(R.id.bDate);
         txtDate = (EditText)findViewById(R.id.txtDate);
         txtDate.setText(day_x+" "+mois[month_x]+" "+year_x);
@@ -137,6 +154,7 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
     private DatePickerDialog.OnDateSetListener dpickerListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            String[] mois= getResources().getStringArray(R.array.mois);
             year_x=year;
             month_x=month;
             day_x=dayOfMonth;
