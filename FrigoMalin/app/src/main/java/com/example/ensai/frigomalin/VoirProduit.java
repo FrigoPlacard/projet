@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ensai.frigomalin.DAO.CoursesDAO;
 import com.example.ensai.frigomalin.DAO.ProduitDAO;
 import com.example.ensai.frigomalin.metier.Produit;
 
@@ -132,6 +133,10 @@ public class VoirProduit extends AppCompatActivity {
             Produit produit = new Produit(nom, quantite, date, categorie, url, id);
             ProduitDAO produitDAO = new ProduitDAO(this);
             produitDAO.delete(produit);
+
+            CoursesDAO coursesDAO = new CoursesDAO(this);
+            coursesDAO.create(produit);
+
             startActivity(new Intent(VoirProduit.this,VoirPlacard.class));
             Toast.makeText(VoirProduit.this, "Produit supprimé", Toast.LENGTH_SHORT).show();
 
