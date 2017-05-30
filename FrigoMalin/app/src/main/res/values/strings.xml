@@ -15,6 +15,10 @@
     <string name="nombre">Nombre</string>
     <string name="supprimer">Supprimer</string>
     <string name="ajouter_produit">Ajouter</string>
+    <string name="lvidee">Liste vidée</string>
+    <string name="pvide">Placard vidé</string>
+    <string name="nom_quantite">Entrer nom et quantité</string>
+    <string name="prod_aj">Produit ajouté</string>
 
     <string-array name="mois">
         <item>janv</item>

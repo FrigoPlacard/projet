@@ -50,9 +50,12 @@ public class VoirPlacard extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case R.id.vider:
+            case R.id.toutvider:
                 ProduitDAO prod = new ProduitDAO(this);
                 prod.deleteAll();
+                finish();
+                Toast.makeText(VoirPlacard.this, "@strings/pvide", Toast.LENGTH_SHORT).show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

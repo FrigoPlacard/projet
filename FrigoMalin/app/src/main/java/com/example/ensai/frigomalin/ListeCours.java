@@ -7,7 +7,9 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.ensai.frigomalin.DAO.CoursesDAO;
 import com.example.ensai.frigomalin.DAO.ProduitDAO;
@@ -64,6 +66,10 @@ public class ListeCours extends AppCompatActivity {
                 startActivity(new Intent(ListeCours.this, Ajout_element_courses.class));
                 return true;
             case R.id.vider:
+                CoursesDAO course = new CoursesDAO(this);
+                course.deleteAll();
+                finish();
+                Toast.makeText(ListeCours.this, "@strings/lvidee", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.actualiser:
                 return true;
@@ -75,5 +81,17 @@ public class ListeCours extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.add(0,v.getId(),0,R.string.supprimer);
+    }
+
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()=="Supprimer"){
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+            int position = (int) info.id;
+            CoursesDAO course = new CoursesDAO(this);
+            final List<Produit> produits =  recupereProduitCourses();
+            course.delete(produits.get(position));
+            return true;
+        }
+        return true;
     }
 }

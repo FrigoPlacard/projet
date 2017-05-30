@@ -47,7 +47,7 @@ public class Ajout_element_courses extends AppCompatActivity {
         nom = (EditText)findViewById(R.id.nom_c);
         quantite = (EditText)findViewById(R.id.quantite_c);
         if(nom.getText().toString().isEmpty() || quantite.getText().toString().isEmpty()) {
-            Toast.makeText(Ajout_element_courses.this, "Rentrer nom et quantité", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Ajout_element_courses.this, "@strings/nom_quantite", Toast.LENGTH_SHORT).show();
         }else{
             String[] type = getResources().getStringArray(R.array.monSpinner);
             int pos = categorie.getSelectedItemPosition();
@@ -57,7 +57,7 @@ public class Ajout_element_courses extends AppCompatActivity {
             CoursesDAO coursesDAO = new CoursesDAO(this);
             coursesDAO.create(produit);
 
-            Toast.makeText(Ajout_element_courses.this, "Produit ajouté", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Ajout_element_courses.this, "@strings/prod_aj", Toast.LENGTH_SHORT).show();
 
             finish();
         }
