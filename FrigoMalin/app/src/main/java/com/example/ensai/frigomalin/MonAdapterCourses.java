@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by ensai on 31/05/17.
  */
-/*public class MonAdapterCourses extends BaseAdapter {
+public class MonAdapterCourses extends BaseAdapter {
 
 
     List<Produit> produits;
@@ -66,4 +66,4 @@ import java.util.List;
 
         return v;
     }
-}*/
+}
