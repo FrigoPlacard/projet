@@ -11,6 +11,8 @@
     <string name="ajouter">Ajouter</string>
     <string name="quantite">Quantité</string>
     <string name="nombre">Nombre</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="ajouter_produit">Ajouter</string>
 
 
 </resources>

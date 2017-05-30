@@ -37,6 +37,7 @@ public class ScannerCodeBarre extends AppCompatActivity {
     public void onClick2(View v){
         Intent i = new Intent(this, Ajout_element.class);
         startActivity(i);
+        finish();
 
     }
 
@@ -51,6 +52,7 @@ public class ScannerCodeBarre extends AppCompatActivity {
             Intent i = new Intent(this, LireURL.class);
             i.putExtra("code",scanContent);
             startActivity(i);
+            finish();
         }
         else{
             Toast toast = Toast.makeText(getApplicationContext(),

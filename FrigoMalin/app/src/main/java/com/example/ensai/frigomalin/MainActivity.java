@@ -28,4 +28,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, ScannerCodeBarre.class));
     }
 
+    public void cliqueVisite (View v){
+        startActivity(new Intent(MainActivity.this, VoirPlacard.class));
+    }
+
 }

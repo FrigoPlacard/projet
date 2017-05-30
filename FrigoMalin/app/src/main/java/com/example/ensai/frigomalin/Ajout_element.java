@@ -65,7 +65,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
         quantite = (EditText)findViewById(R.id.quantite);
         Date date = new Date((month_x+1) + "/" + day_x + "/" + year_x);
         Produit produit= new Produit(nom.getText().toString(),Integer.parseInt(quantite.getText().toString()),date,"viande");
-        ProduitDAO produitDAO= new ProduitDAO();
+        ProduitDAO produitDAO= new ProduitDAO(this);
         produitDAO.create(produit);
 
         Toast.makeText(Ajout_element.this, "element ajouté", Toast.LENGTH_SHORT).show();

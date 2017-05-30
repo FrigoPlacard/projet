@@ -20,7 +20,7 @@ public class BaseHelper extends SQLiteOpenHelper{
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE frigo ( nom TEXT, quantite integer,categorie TEXT,date LONG)");
+        db.execSQL("CREATE TABLE frigo (ID INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT, quantite integer,categorie TEXT,date LONG)");
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.ensai.frigomalin.DAO;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -17,10 +18,16 @@ import java.util.List;
  */
 
 public class ProduitDAO {
+    Context context;
+
+    public ProduitDAO(Context context){
+        this.context = context;
+    }
+
 
     public void create(Produit produit){
 
-        BaseHelper helper = new BaseHelper(MonApplication.getAppContext());
+        BaseHelper helper = new BaseHelper(context);
         try{
             SQLiteDatabase writableDB = helper.getWritableDatabase();
 
@@ -44,7 +51,7 @@ public class ProduitDAO {
 
     public List<Produit> recupereProduitFrigo(){
         List<Produit> produits = new ArrayList<Produit>();
-        BaseHelper helper = new BaseHelper(MonApplication.getAppContext());
+        BaseHelper helper = new BaseHelper(context);
         SQLiteDatabase writableDB = helper.getWritableDatabase();
         Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date FROM frigo",new String[]{});
 
@@ -64,7 +71,7 @@ public class ProduitDAO {
 
     public List<Produit> recupereProduitPerimee(){
         List<Produit> produits = new ArrayList<Produit>();
-        BaseHelper helper = new BaseHelper(MonApplication.getAppContext());
+        BaseHelper helper = new BaseHelper(context);
         SQLiteDatabase writableDB = helper.getWritableDatabase();
         long dateLong = (new Date()).getTime();
         Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date FROM frigo WHERE date<= ?",new String[]{});
