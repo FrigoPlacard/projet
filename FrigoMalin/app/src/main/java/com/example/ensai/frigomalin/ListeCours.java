@@ -28,13 +28,25 @@ public class ListeCours extends AppCompatActivity {
         listView.setAdapter(adapter);
 
     }
-private List<Produit> recupereProduitCourses() {
-    CoursesDAO coursesDAO =new CoursesDAO(this);
-    List<Produit> produits=coursesDAO.recupereProduitCourses();
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_liste_cours);
+        ListView listView = (ListView) findViewById(R.id.listecourse);
+        registerForContextMenu(listView);
+        final List<Produit> produits =  recupereProduitCourses();
+        MonAdapterCourses adapter = new MonAdapterCourses(produits,this);
+        listView.setAdapter(adapter);
+
+    }
 
 
 
-    return produits;
+    private List<Produit> recupereProduitCourses() {
+        CoursesDAO coursesDAO =new CoursesDAO(this);
+        List<Produit> produits=coursesDAO.recupereProduitCourses();
+        return produits;
     }
 
 
@@ -49,7 +61,7 @@ private List<Produit> recupereProduitCourses() {
                 startActivity(new Intent(ListeCours.this, ScannerCodeBarre.class));
                 return true;
             case R.id.entrer:
-                startActivity(new Intent(ListeCours.this, Ajout_element.class));
+                startActivity(new Intent(ListeCours.this, Ajout_element_courses.class));
                 return true;
             case R.id.vider:
                 return true;

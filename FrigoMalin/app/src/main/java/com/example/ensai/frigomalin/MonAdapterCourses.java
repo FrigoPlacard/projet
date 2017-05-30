@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by ensai on 31/05/17.
  */
-/*public class MonAdapterCourses extends BaseAdapter {
+public class MonAdapterCourses extends BaseAdapter {
 
 
     List<Produit> produits;
@@ -61,9 +61,9 @@ import java.util.List;
         TextView nom = (TextView) v.findViewById(R.id.nom_produit_c);
         TextView quantite = (TextView) v.findViewById(R.id.quantite_produit_c);
         nom.setText(element.getNom());
-        quantite.setText(element.getQuantite());
+        quantite.setText(element.getQuantite()+"");
 
 
         return v;
     }
-}*/
+}

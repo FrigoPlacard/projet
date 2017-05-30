@@ -31,7 +31,9 @@
         <activity android:name=".Ajout_element" />
         <activity android:name=".VoirPlacard" />
         <activity android:name=".VoirProduit" />
-        <activity android:name=".ListeCours"></activity>
+        <activity android:name=".Ajout_element_courses" />
+        <activity android:name=".ListeCours" />
+        <activity android:name=".ProduitPerime"></activity>
     </application>
 
 </manifest>

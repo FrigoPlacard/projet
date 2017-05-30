@@ -63,7 +63,6 @@ public class Ajout_element_courses extends AppCompatActivity {
         }
 
 
-        finish();
 
     }
 

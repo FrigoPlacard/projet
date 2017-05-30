@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, ListeCours.class));
     }
 
+    public void cliquePerime(View v){
+        startActivity(new Intent(MainActivity.this, ProduitPerime.class));
+    }
+
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;

@@ -133,7 +133,7 @@ public class VoirProduit extends AppCompatActivity {
             Produit produit = new Produit(nom, quantite, date, categorie, url, id);
             ProduitDAO produitDAO = new ProduitDAO(this);
             produitDAO.delete(produit);
-
+            produit = new Produit(nom, quantite+1, date, categorie, url, id);
             CoursesDAO coursesDAO = new CoursesDAO(this);
             coursesDAO.create(produit);
 

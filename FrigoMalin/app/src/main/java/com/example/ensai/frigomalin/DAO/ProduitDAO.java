@@ -66,7 +66,6 @@ public class ProduitDAO {
             writableDB.update("frigo",values,"id=?",new String[]{produit.getId()+""});
 
 
-            // writabeDB.rawQuery("INSERT INTO element VALUES(?,?)",new String[]{nomString,desciptionString});
             writableDB.close();
         }catch(Exception e){
             e.printStackTrace();
@@ -129,7 +128,7 @@ public class ProduitDAO {
         BaseHelper helper = new BaseHelper(context);
         SQLiteDatabase writableDB = helper.getWritableDatabase();
         long dateLong = (new Date()).getTime();
-        Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date,url FROM,id frigo WHERE date<= ?",new String[]{});
+        Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date,url,id FROM frigo WHERE date<= ?",new String[]{dateLong+""});
 
         int nbRows = c.getCount();
         while(c.moveToNext()){
