@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="ajouter manuellement"
+        android:text="@string/ajouter"
         android:onClick="onClick2"
         />
 

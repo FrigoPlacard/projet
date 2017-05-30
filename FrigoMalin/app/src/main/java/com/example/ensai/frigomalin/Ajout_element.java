@@ -50,7 +50,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
 
 
     public static void ajouter(View v){
-        Element element = new Element();
+        //Element element = new Element();
     }
 
     protected Dialog onCreateDialog(int id) {
