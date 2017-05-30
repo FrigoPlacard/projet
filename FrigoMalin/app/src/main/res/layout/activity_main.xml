@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:text="@string/bouton"
         android:layout_weight="0.2"
+        android:onClick="cliqueVisite"
         android:id="@+id/boutonvisite" />
 
     <Button

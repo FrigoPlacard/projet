@@ -18,13 +18,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ensai.frigomalin.DAO.ProduitDAO;
+import com.example.ensai.frigomalin.metier.Produit;
 
 import org.json.JSONObject;
 import java.util.Calendar;
+import java.util.Date;
 
 public class LireURL extends AppCompatActivity implements View.OnClickListener {
     Button bDate;
-    EditText txtDate, nom;
+    EditText txtDate, nom, quantite;
     int year_x,month_x,day_x;
     static final int DIALOG_ID=0;
 
@@ -63,11 +66,13 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
                                 String code = (String) j.get("code");
                                 String nomProduit = (String) p.get("product_name");
                                 String categorie = (String) p.get("pnns_groups_1");
-                                String quantite = (String) p.get("quantity");
+                                String quantiteProduit = (String) p.get("quantity");
 
                                 Toast.makeText(LireURL.this, nomProduit, Toast.LENGTH_SHORT).show();
                                 nom = (EditText)findViewById(R.id.nom);
-                                nom.setText(nomProduit + " "+quantite);
+                                nom.setText(nomProduit+" - "+quantiteProduit);
+
+
 
 
 
@@ -105,7 +110,12 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
 
 
     public void ajouter(View v){
-        Ajout_element.ajouter(v);
+        nom = (EditText)findViewById(R.id.nom);
+        quantite = (EditText)findViewById(R.id.quantite);
+        Date date = new Date((month_x+1) + "/" + day_x + "/" + year_x);
+        Produit produit= new Produit(nom.getText().toString(),Integer.parseInt(quantite.getText().toString()),date,"viande");
+        ProduitDAO produitDAO= new ProduitDAO(this);
+        produitDAO.create(produit);
 
     }
     public void showDialogOnButtonClick(){

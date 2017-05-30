@@ -29,9 +29,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".Ajout_element">
-            android:configChanges="locale"
-        </activity>
+
+        <activity android:name=".Ajout_element" />
+        <activity android:name=".VoirPlacard" />
+        <activity android:name=".VoirProduit"></activity>
     </application>
 
 </manifest>

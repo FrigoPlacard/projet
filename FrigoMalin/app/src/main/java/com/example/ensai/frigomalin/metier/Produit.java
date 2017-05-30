@@ -6,15 +6,15 @@ import java.util.Date;
  * Created by ensai on 09/05/17.
  */
 
-public class Element {
+public class Produit {
 
     private long codeBarre;
     private String nom;
-    private String quantite;
+    private int quantite;
     private Date datePeremption;
-    private TypeNourriture typeNourriture;
+    private String typeNourriture;
 
-    public Element(long codeBarre, String nom, String quantite, Date datePeremption, TypeNourriture typeNourriture) {
+    public Produit(long codeBarre, String nom, int quantite, Date datePeremption, String typeNourriture) {
         this.codeBarre = codeBarre;
         this.nom = nom;
         this.quantite = quantite;
@@ -22,11 +22,12 @@ public class Element {
         this.typeNourriture = typeNourriture;
     }
 
-    public Element( String nom, String quantite, Date datePeremption, TypeNourriture typeNourriture) {
+    public Produit(String nom, int quantite, Date datePeremption, String typeNourriture) {
         this.nom = nom;
         this.quantite = quantite;
         this.datePeremption = datePeremption;
         this.typeNourriture = typeNourriture;
+       // this.typeNourriture="viande";
     }
 
 
@@ -39,7 +40,7 @@ public class Element {
         return nom;
     }
 
-    public String getQuantite() {
+    public int getQuantite() {
         return quantite;
     }
 
@@ -47,7 +48,7 @@ public class Element {
         return datePeremption;
     }
 
-    public TypeNourriture getTypeNourriture() {
+    public String getTypeNourriture() {
         return typeNourriture;
     }
 }
