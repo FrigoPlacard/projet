@@ -26,11 +26,11 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
     Button bDate;
     EditText txtDate;
     EditText nom,quantite;
-    Spinner categorie;
+    private Spinner categorie;
     int year_x,month_x,day_x;
     static final int DIALOG_ID=0;
 
-    String[] mois={"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"};
+   // String[] mois={"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"};
 
 
     @Override
@@ -46,14 +46,19 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_ajout_element);
 
 
+        categorie = (Spinner) findViewById(R.id.monSpinner);
+
+
         showDialogOnButtonClick();
     }
+
 
 
 
     public void showDialogOnButtonClick(){
         bDate = (Button)findViewById(R.id.bDate);
         txtDate = (EditText)findViewById(R.id.txtDate);
+        String[] mois= getResources().getStringArray(R.array.mois);
         txtDate.setText(day_x+" "+mois[month_x]+" "+year_x);
 
 
@@ -64,14 +69,22 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
     public void ajouter(View v){
         nom = (EditText)findViewById(R.id.nom);
         quantite = (EditText)findViewById(R.id.quantite);
-        Date date = new Date((month_x+1) + "/" + day_x + "/" + year_x);
-        Produit produit= new Produit(nom.getText().toString(),Integer.parseInt(quantite.getText().toString()),date,"viande");
-        ProduitDAO produitDAO= new ProduitDAO(this);
-        produitDAO.create(produit);
+        if(nom.getText().toString().isEmpty() || quantite.getText().toString().isEmpty()) {
+            Toast.makeText(Ajout_element.this, "Rentrer nom et quantité", Toast.LENGTH_SHORT).show();
+        }else{
+            String[] type = getResources().getStringArray(R.array.monSpinner);
+            int pos = categorie.getSelectedItemPosition();
+            String cat = type[pos];
 
-        Toast.makeText(Ajout_element.this, "element ajouté", Toast.LENGTH_SHORT).show();
+            Date date = new Date((month_x + 1) + "/" + day_x + "/" + year_x);
+            Produit produit = new Produit(nom.getText().toString(), Integer.parseInt(quantite.getText().toString()), date, cat, "");
+            ProduitDAO produitDAO = new ProduitDAO(this);
+            produitDAO.create(produit);
 
-        finish();
+            Toast.makeText(Ajout_element.this, "Produit ajouté", Toast.LENGTH_SHORT).show();
+
+            finish();
+        }
         
     }
 
@@ -88,6 +101,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
             year_x=year;
             month_x=month;
             day_x=dayOfMonth;
+            String[] mois= getResources().getStringArray(R.array.mois);
             txtDate.setText(day_x+" "+mois[month_x]+" "+year_x);
 
 

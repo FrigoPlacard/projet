@@ -31,6 +31,18 @@
         <item>dec</item>
     </string-array>
 
+    <string-array name="monSpinner">
+        <item>Fruit</item>
+        <item>Legume</item>
+        <item>Conserve</item>
+        <item>Viande</item>
+        <item>Poisson</item>
+        <item>Boisson</item>
+        <item>PainCereale</item>
+        <item>sauce</item>
+        <item>platPrepare</item>
+    </string-array>
+
 
 
 </resources>

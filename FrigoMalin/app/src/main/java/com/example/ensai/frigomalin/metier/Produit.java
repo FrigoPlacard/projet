@@ -13,6 +13,8 @@ public class Produit {
     private int quantite;
     private Date datePeremption;
     private String typeNourriture;
+    private String url;
+    private int id;
 
     public Produit(long codeBarre, String nom, int quantite, Date datePeremption, String typeNourriture) {
         this.codeBarre = codeBarre;
@@ -22,15 +24,33 @@ public class Produit {
         this.typeNourriture = typeNourriture;
     }
 
-    public Produit(String nom, int quantite, Date datePeremption, String typeNourriture) {
+    public Produit(String nom, int quantite, Date datePeremption, String typeNourriture,String url,int id) {
         this.nom = nom;
         this.quantite = quantite;
         this.datePeremption = datePeremption;
         this.typeNourriture = typeNourriture;
+        this.url=url;
+        this.id=id;
        // this.typeNourriture="viande";
     }
 
+    public Produit(String nom, int quantite, Date datePeremption, String typeNourriture,String url) {
+        this.nom = nom;
+        this.quantite = quantite;
+        this.datePeremption = datePeremption;
+        this.typeNourriture = typeNourriture;
+        this.url=url;
+        // this.typeNourriture="viande";
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getUrl() {
+
+        return url;
+    }
 
     public long getCodeBarre() {
         return codeBarre;
