@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by ensai on 31/05/17.
  */
-public class MonAdapterCourses extends BaseAdapter {
+/*public class MonAdapterCourses extends BaseAdapter {
 
 
     List<Produit> produits;
@@ -46,22 +46,22 @@ public class MonAdapterCourses extends BaseAdapter {
         return position;
     }
 
-    @Override
+    //@Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v;
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.layout_produit_courses,null);
+           v = inflater.inflate(R.layout.layout_produit_courses,null);
         }
         else{
             v = convertView;
         }
         Produit element= (Produit) getItem(position);
         TextView nom = (TextView) v.findViewById(R.id.nom_produit);
-        TextView nom = (TextView) v.findViewById(R.id.nom_produit);
+       TextView nom = (TextView) v.findViewById(R.id.nom_produit);
         nom.setText(element.getNom());
 
 
         return v;
     }
-}
+}*/
