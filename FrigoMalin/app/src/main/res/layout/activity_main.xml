@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/course"
         android:layout_weight="0.2"
+        android:onClick="cliqueListe"
         android:id="@+id/boutoncourses"/>
     <Button
         android:layout_width="match_parent"

@@ -86,6 +86,9 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
             finish();
         }
         
+
+        finish();
+
     }
 
     protected Dialog onCreateDialog(int id) {
