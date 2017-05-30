@@ -1,5 +1,6 @@
 package com.example.ensai.frigomalin;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -22,6 +23,8 @@ public class ScannerCodeBarre extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner_code_barre);
         scanBtn = (Button)findViewById(R.id.scan_button);
+        scanBtn.setBackgroundColor(Color.BLUE);
+        scanBtn.setTextColor(Color.WHITE);
         formatTxt = (TextView)findViewById(R.id.scan_format);
         contentTxt = (TextView)findViewById(R.id.scan_content);
     }
@@ -31,6 +34,12 @@ public class ScannerCodeBarre extends AppCompatActivity {
         scanIntegrator.initiateScan();
 
     }
+    public void onClick2(View v){
+        Intent i = new Intent(this, Ajout_element.class);
+        startActivity(i);
+
+    }
+
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
