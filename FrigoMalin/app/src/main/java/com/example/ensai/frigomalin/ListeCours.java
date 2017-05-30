@@ -9,6 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.ensai.frigomalin.DAO.CoursesDAO;
+import com.example.ensai.frigomalin.DAO.ProduitDAO;
+import com.example.ensai.frigomalin.metier.Produit;
+
+import java.util.List;
+
 public class ListeCours extends AppCompatActivity {
 
     @Override
@@ -17,8 +23,20 @@ public class ListeCours extends AppCompatActivity {
         setContentView(R.layout.activity_liste_cours);
         ListView listView = (ListView) findViewById(R.id.listecourse);
         registerForContextMenu(listView);
+        final List<Produit> produits =  recupereProduitCourses();
+        MonAdapterCourses adapter = new MonAdapterCourses(produits,this);
+        listView.setAdapter(adapter);
 
     }
+private List<Produit> recupereProduitCourses() {
+    CoursesDAO coursesDAO =new CoursesDAO(this);
+    List<Produit> produits=coursesDAO.recupereProduitCourses();
+
+
+
+    return produits;
+    }
+
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.listecourse,menu);
