@@ -14,5 +14,20 @@
     <string name="supprimer">Supprimer</string>
     <string name="ajouter_produit">Ajouter</string>
 
+    <string-array name="mois">
+        <item>janv</item>
+        <item>févr</item>
+        <item>mars</item>
+        <item>avri</item>
+        <item>mai</item>
+        <item>juin</item>
+        <item>juil</item>
+        <item>août</item>
+        <item>sept</item>
+        <item>oct</item>
+        <item>nov</item>
+        <item>dec</item>
+    </string-array>
+
 
 </resources>

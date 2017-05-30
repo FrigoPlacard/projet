@@ -31,7 +31,7 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
     int year_x,month_x,day_x;
     static final int DIALOG_ID=0;
 
-    String[] mois={"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"};
+    String[] mois= getResources().getStringArray(R.array.mois) /*{"janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","dec"}*/;
 
 
     @Override

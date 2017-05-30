@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.ensai.frigomalin.metier.Produit;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class MonAdapter extends BaseAdapter {
 
     List<Produit> produits;
     Context context;
+
 
     public MonAdapter(List<Produit> elements,Context context){
         super();
@@ -54,13 +56,19 @@ public class MonAdapter extends BaseAdapter {
         else{
             v = convertView;
         }
-
+        String[] mois= context.getResources().getStringArray(R.array.mois);
         Produit element= (Produit) getItem(position);
         TextView nom = (TextView) v.findViewById(R.id.nom_produit);
         TextView date = (TextView) v.findViewById(R.id.date_produit);
         nom.setText(element.getNom());
         Date date1 = element.getDatePeremption();
-        date.setText(date1.getDay() +" "+date1.getMonth()+ " "+date1.getYear());
+        final Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date1);
+        int annee = calendar.get(Calendar.YEAR);
+        int mois1 = calendar.get(Calendar.MONTH);
+        int jour = calendar.get(Calendar.DAY_OF_MONTH);
+
+        date.setText(jour+" "+mois[mois1]+" "+annee);
 
         return v;
     }
