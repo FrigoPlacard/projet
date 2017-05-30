@@ -13,17 +13,6 @@
 
     tools:context="com.example.ensai.frigomalin.MainActivity">
 
-
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/param"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="top|right"
-        android:layout_margin="16dp" />
-
-
-
     <ImageView
         android:layout_width="183dp"
         android:layout_height="99dp"

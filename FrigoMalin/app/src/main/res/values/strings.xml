@@ -9,7 +9,9 @@
     <string name="ajout_date">Définir la date</string>
     <string name="nom">Nom</string>
     <string name="ajouter">Ajouter</string>
+    <string name = "ajouter_main">Ajouter manuellement</string>
     <string name="quantite">Quantité</string>
+    <string name="choisir_langue">choisir langue</string>
     <string name="nombre">Nombre</string>
     <string name="supprimer">Supprimer</string>
     <string name="ajouter_produit">Ajouter</string>
@@ -28,6 +30,7 @@
         <item>nov</item>
         <item>dec</item>
     </string-array>
+
 
 
 </resources>

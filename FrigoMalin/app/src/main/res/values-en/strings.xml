@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FrigoMalin</string>
+    <string name="bouton">Visiter les placards</string>
+    <string name="course">List</string>
+    <string name="perim">Voir les produits en fin de validité</string>
+    <string name="recettes">Recipes</string>
+    <string name="scan">Scan</string>
+    <string name="nomBase">Ma Base</string>
+    <string name="ajout_date">Date</string>
+    <string name="nom">Name</string>
+    <string name="ajouter">Add</string>
+    <string name="quantite">Quantity</string>
+    <string name="choisir_langue">Switch language</string>
+    <string name = "ajouter_main">Ajouter manuellement</string>
+
+</resources>
