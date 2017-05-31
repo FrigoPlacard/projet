@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main,menu);
+        getMenuInflater().inflate(R.menu.menumain,menu);
         return true;
     }
 
@@ -55,10 +55,16 @@ public class MainActivity extends AppCompatActivity {
     public void changeToFrench(){
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("LANG", "default").commit();
         updateResourcesLegacy("default");
+        finish();
+        Intent refresh = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(refresh);
     }
     public void changeToEnglish(){
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("LANG", "en").commit();
         updateResourcesLegacy("en");
+        finish();
+        Intent refresh = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(refresh);
     }
 
     @SuppressWarnings("deprecation")
