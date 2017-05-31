@@ -59,7 +59,6 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         //response.substring(0,500);
-                        Toast.makeText(LireURL.this, "J'ai réussi à lire l'url", Toast.LENGTH_SHORT).show();
                         try {
                             JSONObject j = new JSONObject(response);
                             String statut = (String) j.get("status_verbose");
@@ -84,14 +83,14 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
 
                         } catch (Exception e) {
                             Intent i = new Intent(LireURL.this,ScannerCodeBarre.class);
-                            Toast.makeText(LireURL.this, "Réessayez", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LireURL.this, R.string.reessayer, Toast.LENGTH_SHORT).show();
                             startActivity(i);
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LireURL.this, "Je n'ai pas réussi à lire l'url", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LireURL.this, R.string.erreur, Toast.LENGTH_SHORT).show();
 
 
             }

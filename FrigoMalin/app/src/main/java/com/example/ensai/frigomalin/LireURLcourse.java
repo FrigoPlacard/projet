@@ -47,7 +47,6 @@ public class LireURLcourse extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         //response.substring(0,500);
-                        Toast.makeText(LireURLcourse.this, "J'ai réussi à lire l'url", Toast.LENGTH_SHORT).show();
                         try {
                             JSONObject j = new JSONObject(response);
                             String statut = (String) j.get("status_verbose");
@@ -79,7 +78,7 @@ public class LireURLcourse extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LireURLcourse.this, "Je n'ai pas réussi à lire l'url", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LireURLcourse.this, R.string.erreur, Toast.LENGTH_SHORT).show();
 
 
             }
