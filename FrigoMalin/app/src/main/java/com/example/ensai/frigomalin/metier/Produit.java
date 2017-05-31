@@ -43,16 +43,12 @@ public class Produit {
         // this.typeNourriture="viande";
     }
 
-    public Produit(String nom, int quantite, String typeNourriture) {
+    public Produit(String nom) {
         this.nom = nom;
-        this.quantite = quantite;
-        this.typeNourriture = typeNourriture;
     }
 
-    public Produit(String nom, int quantite, String typeNourriture,int id) {
+    public Produit(String nom,int id) {
         this.nom = nom;
-        this.quantite = quantite;
-        this.typeNourriture = typeNourriture;
         this.id=id;
     }
 

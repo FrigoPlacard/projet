@@ -11,19 +11,6 @@
         android:hint="@string/nom"
         android:id="@+id/nom_c"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/quantite"
-        android:inputType="number"
-        android:id="@+id/quantite_c"/>
-
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@id/monSpinner"
-        android:entries="@array/monSpinner"/>
 
     <Space
         android:layout_width="match_parent"

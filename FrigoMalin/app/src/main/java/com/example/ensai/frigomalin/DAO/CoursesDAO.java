@@ -33,8 +33,6 @@ public class CoursesDAO {
 
             ContentValues values = new ContentValues();
             values.put("nom",produit.getNom());
-            values.put("quantite",produit.getQuantite());
-            values.put("categorie",produit.getTypeNourriture().toString());
             writableDB.insert("courses",null,values);
 
             writableDB.close();
@@ -55,8 +53,6 @@ public class CoursesDAO {
 
             ContentValues values = new ContentValues();
             values.put("nom",produit.getNom());
-            values.put("quantite",produit.getQuantite());
-            values.put("categorie",produit.getTypeNourriture().toString());
             writableDB.update("courses",values,"id=?",new String[]{produit.getId()+""});
             writableDB.close();
         }catch(Exception e){
@@ -97,15 +93,13 @@ public class CoursesDAO {
         List<Produit> produits = new ArrayList<Produit>();
         BaseHelper helper = new BaseHelper(context);
         SQLiteDatabase writableDB = helper.getWritableDatabase();
-        Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,id FROM courses",new String[]{});
+        Cursor c = writableDB.rawQuery("SELECT nom,id FROM courses",new String[]{});
 
         int nbRows = c.getCount();
         while(c.moveToNext()){
             String nom = c.getString(0);
-            int quantite =  c.getInt(1);
-            String categorie = c.getString(2);
-            int id = c.getInt(3);
-            Produit produit=new Produit(nom,quantite,categorie,id);
+            int id = c.getInt(1);
+            Produit produit=new Produit(nom,id);
             produits.add(produit);
         }
         c.close();

@@ -75,8 +75,6 @@ public class ListeCours extends AppCompatActivity {
                 finish();
                 Toast.makeText(ListeCours.this, R.string.lvidee, Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.actualiser:
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

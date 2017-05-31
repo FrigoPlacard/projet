@@ -12,6 +12,4 @@
     <item android:id="@+id/vider"
         android:title="Vider Liste">
     </item>
-    <item android:id="@+id/actualiser"
-        android:title="Actualiser liste"/>
 </menu>

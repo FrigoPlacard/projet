@@ -22,6 +22,7 @@
     <string name="prod_aj">Product added</string>
     <string name="prod_suppr">Product deleted</string>
     <string name="aj_q">Enter quantity</string>
+    <string name="nom_dem">Enter name</string>
 
     <string-array name="mois">
         <item>jan</item>

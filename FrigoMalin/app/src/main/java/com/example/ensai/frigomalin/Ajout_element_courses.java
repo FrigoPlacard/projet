@@ -23,8 +23,8 @@ import java.util.Date;
  */
 
 public class Ajout_element_courses extends AppCompatActivity {
-    EditText nom,quantite;
-    private Spinner categorie;
+    EditText nom;
+
 
 
 
@@ -36,7 +36,6 @@ public class Ajout_element_courses extends AppCompatActivity {
         setContentView(R.layout.activity_ajout_element_courses);
 
 
-        categorie = (Spinner) findViewById(R.id.monSpinner);
 
     }
 
@@ -45,15 +44,11 @@ public class Ajout_element_courses extends AppCompatActivity {
 
     public void ajouter_c(View v){
         nom = (EditText)findViewById(R.id.nom_c);
-        quantite = (EditText)findViewById(R.id.quantite_c);
-        if(nom.getText().toString().isEmpty() || quantite.getText().toString().isEmpty()) {
-            Toast.makeText(Ajout_element_courses.this, R.string.nom_quantite, Toast.LENGTH_SHORT).show();
-        }else{
-            String[] type = getResources().getStringArray(R.array.monSpinner);
-            int pos = categorie.getSelectedItemPosition();
-            String cat = type[pos];
 
-            Produit produit = new Produit(nom.getText().toString(), Integer.parseInt(quantite.getText().toString()),cat);
+        if(nom.getText().toString().isEmpty()) {
+            Toast.makeText(Ajout_element_courses.this, R.string.nom_dem, Toast.LENGTH_SHORT).show();
+        }else{
+            Produit produit = new Produit(nom.getText().toString());
             CoursesDAO coursesDAO = new CoursesDAO(this);
             coursesDAO.create(produit);
 
