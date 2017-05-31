@@ -9,7 +9,49 @@
     <string name="ajout_date">Définir la date</string>
     <string name="nom">Nom</string>
     <string name="ajouter">Ajouter</string>
+    <string name="ajouter_main">Ajouter manuellement</string>
     <string name="quantite">Quantité</string>
+    <string name="choisir_langue">choisir langue</string>
+    <string name="nombre">Nombre</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="ajouter_produit">Ajouter</string>
+    <string name="lvidee">Liste vidée</string>
+    <string name="pvide">Placard vidé</string>
+    <string name="nom_quantite">Entrer nom et quantité</string>
+    <string name="prod_aj">Produit ajouté</string>
+    <string name="prod_suppr">Produit supprimé</string>
+    <string name="aj_q">Rentrer quantité</string>
+    <string name="nom_dem">Rentrer un nom</string>
+    <string name="erreur">Erreur, ajoutez manuellement</string>
+    <string name="reessayer">Réessayez</string>
+
+
+    <string-array name="mois">
+        <item>janv</item>
+        <item>févr</item>
+        <item>mars</item>
+        <item>avri</item>
+        <item>mai</item>
+        <item>juin</item>
+        <item>juil</item>
+        <item>août</item>
+        <item>sept</item>
+        <item>oct</item>
+        <item>nov</item>
+        <item>dec</item>
+    </string-array>
+
+    <string-array name="monSpinner">
+        <item>Fruit</item>
+        <item>Legume</item>
+        <item>Conserve</item>
+        <item>Viande</item>
+        <item>Poisson</item>
+        <item>Boisson</item>
+        <item>PainCereale</item>
+        <item>sauce</item>
+        <item>platPrepare</item>
+    </string-array>
 
 
 </resources>

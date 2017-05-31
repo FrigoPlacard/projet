@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1" android:title="Add product">
+        <menu android:id="@+id/sousmenu">
+            <item android:id="@+id/scanner"
+                android:title="Scan"   />
+
+            <item android:id="@+id/entrer"
+                android:title="Add manually"  />
+        </menu>
+    </item>
+    <item android:id="@+id/vider"
+        android:title="Clear List">
+    </item>
+</menu>

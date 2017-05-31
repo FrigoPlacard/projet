@@ -19,16 +19,21 @@
         android:onClick="onClick"
         android:text="@string/scan"
         android:textColor="@android:color/white"
-        android:background="@android:color/holo_red_dark"/>
+        android:background="@android:color/holo_blue_dark"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
 
     <Button android:id="@+id/ajout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="ajouter manuellement"
+        android:text="@string/ajouter"
         android:onClick="onClick2"
-        />
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_green_dark"/>
 
 
     <TextView

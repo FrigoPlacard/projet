@@ -3,6 +3,7 @@
     package="com.example.ensai.frigomalin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -11,20 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            android:configChanges="locale"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScannerCodeBarre" />
-        <activity android:name=".LireURL" />
+        <activity android:name=".ScannerCodeBarre">
+            android:configChanges="locale"
+        </activity>
+        <activity android:name=".LireURL">
+            android:configChanges="locale"</activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".Ajout_element"></activity>
+        <activity android:name=".Ajout_element" />
+        <activity android:name=".VoirPlacard" />
+        <activity android:name=".VoirProduit" />
+        <activity android:name=".Ajout_element_courses" />
+        <activity android:name=".ListeCours" />
+        <activity android:name=".ProduitPerime" />
+
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="ccom.example.ensai.frigomalin" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".LireURLcourse"></activity>
     </application>
 
 </manifest>

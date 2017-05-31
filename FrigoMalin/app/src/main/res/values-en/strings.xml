@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FrigoMalin</string>
+    <string name="bouton">Cupboard</string>
+    <string name="course">Shopping list</string>
+    <string name="perim">Expired products</string>
+    <string name="recettes">Recipes</string>
+    <string name="scan">Scan</string>
+    <string name="nomBase">Ma Base</string>
+    <string name="ajout_date">Set date</string>
+    <string name="nom">Name</string>
+    <string name="ajouter">Add</string>
+    <string name="ajouter_main">Enter manually</string>
+    <string name="quantite">Quantity</string>
+    <string name="choisir_langue">Set Language</string>
+    <string name="nombre">Number</string>
+    <string name="supprimer">delete</string>
+    <string name="ajouter_produit">Add</string>
+    <string name="lvidee">List empty</string>
+    <string name="pvide">Cupboard empty</string>
+    <string name="nom_quantite">Enter name and quantity</string>
+    <string name="prod_aj">Product added</string>
+    <string name="prod_suppr">Product deleted</string>
+    <string name="aj_q">Enter quantity</string>
+    <string name="nom_dem">Enter name</string>
+    <string name="erreur">Error, enter manually</string>
+    <string name="reessayer">Retry</string>
+
+    <string-array name="mois">
+        <item>jan</item>
+        <item>feb</item>
+        <item>mar</item>
+        <item>apr</item>
+        <item>may</item>
+        <item>jun</item>
+        <item>jul</item>
+        <item>aug</item>
+        <item>sept</item>
+        <item>oct</item>
+        <item>nov</item>
+        <item>dec</item>
+    </string-array>
+
+    <string-array name="monSpinner">
+        <item>Fruit</item>
+        <item>Vegetable</item>
+        <item>Can of food</item>
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Beverage</item>
+        <item>BreadCereal</item>
+        <item>Sauce</item>
+        <item>PreparedDish</item>
+    </string-array>
+
+
+</resources>
