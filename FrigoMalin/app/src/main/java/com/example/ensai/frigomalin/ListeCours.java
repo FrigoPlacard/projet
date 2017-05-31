@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.ensai.frigomalin.DAO.CoursesDAO;
 import com.example.ensai.frigomalin.DAO.ProduitDAO;
 import com.example.ensai.frigomalin.metier.Produit;
+import com.google.zxing.integration.android.IntentIntegrator;
 
 import java.util.List;
 
@@ -60,7 +61,9 @@ public class ListeCours extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.scanner:
-                startActivity(new Intent(ListeCours.this, ScannerCodeBarre.class));
+                IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+                scanIntegrator.initiateScan();
+
                 return true;
             case R.id.entrer:
                 startActivity(new Intent(ListeCours.this, Ajout_element_courses.class));
@@ -69,7 +72,7 @@ public class ListeCours extends AppCompatActivity {
                 CoursesDAO course = new CoursesDAO(this);
                 course.deleteAll();
                 finish();
-                Toast.makeText(ListeCours.this, "@strings/lvidee", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListeCours.this, R.string.lvidee, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.actualiser:
                 return true;
@@ -84,13 +87,14 @@ public class ListeCours extends AppCompatActivity {
     }
 
     public boolean onContextItemSelected(MenuItem item){
-        if(item.getTitle()=="Supprimer"){
+        if(item.getTitle().toString().equals(R.string.supprimer)){
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             int position = (int) info.id;
             CoursesDAO course = new CoursesDAO(this);
             final List<Produit> produits =  recupereProduitCourses();
             course.delete(produits.get(position));
-            return true;
+            finish();
+            Toast.makeText(ListeCours.this,R.string.prod_suppr,Toast.LENGTH_SHORT).show();
         }
         return true;
     }

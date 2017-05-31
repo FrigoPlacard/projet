@@ -70,7 +70,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
         nom = (EditText)findViewById(R.id.nom);
         quantite = (EditText)findViewById(R.id.quantite);
         if(nom.getText().toString().isEmpty() || quantite.getText().toString().isEmpty()) {
-            Toast.makeText(Ajout_element.this, "@strings/nom_quantite", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Ajout_element.this, R.string.nom_quantite, Toast.LENGTH_SHORT).show();
         }else{
             String[] type = getResources().getStringArray(R.array.monSpinner);
             int pos = categorie.getSelectedItemPosition();
@@ -81,7 +81,7 @@ public class Ajout_element extends AppCompatActivity implements View.OnClickList
             ProduitDAO produitDAO = new ProduitDAO(this);
             produitDAO.create(produit);
 
-            Toast.makeText(Ajout_element.this, "@strings/prod_aj", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Ajout_element.this,R.string.prod_aj, Toast.LENGTH_SHORT).show();
 
             finish();
         }

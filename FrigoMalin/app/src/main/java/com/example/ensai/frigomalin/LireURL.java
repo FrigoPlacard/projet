@@ -116,7 +116,7 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
         nom = (EditText)findViewById(R.id.nom);
         quantite = (EditText)findViewById(R.id.quantite);
         if(quantite.getText().toString().isEmpty()) {
-            Toast.makeText(LireURL.this, "Rentrer quantité", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LireURL.this, R.string.aj_q, Toast.LENGTH_SHORT).show();
         }
         else {
             String[] type = getResources().getStringArray(R.array.monSpinner);
@@ -129,7 +129,7 @@ public class LireURL extends AppCompatActivity implements View.OnClickListener {
             Produit produit = new Produit(nom.getText().toString(), Integer.parseInt(quantite.getText().toString()), date, cat, url);
             ProduitDAO produitDAO = new ProduitDAO(this);
             produitDAO.create(produit);
-            Toast.makeText(LireURL.this, "Produit ajouté", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LireURL.this, R.string.prod_aj, Toast.LENGTH_SHORT).show();
             finish();
         }
 
