@@ -32,7 +32,6 @@ public class ScannerCodeBarre extends AppCompatActivity {
     public void onClick(View v){
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.initiateScan();
-
     }
     public void onClick2(View v){
         Intent i = new Intent(this, Ajout_element.class);
