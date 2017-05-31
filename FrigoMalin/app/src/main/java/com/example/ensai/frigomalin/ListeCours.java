@@ -87,7 +87,9 @@ public class ListeCours extends AppCompatActivity {
     }
 
     public boolean onContextItemSelected(MenuItem item){
+
         if(item.getTitle().toString().equals(R.string.supprimer)){
+
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             int position = (int) info.id;
             CoursesDAO course = new CoursesDAO(this);

@@ -128,7 +128,8 @@ public class ProduitDAO {
         BaseHelper helper = new BaseHelper(context);
         SQLiteDatabase writableDB = helper.getWritableDatabase();
         long dateLong = (new Date()).getTime();
-        Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date,url,id FROM frigo WHERE date<= ?",new String[]{dateLong+""});
+        long delai = 2*24*3600*1000;
+        Cursor c = writableDB.rawQuery("SELECT nom,quantite,categorie,date,url,id FROM frigo WHERE date<= ?+?",new String[]{dateLong+"",delai+""});
 
         int nbRows = c.getCount();
         while(c.moveToNext()){
