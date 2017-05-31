@@ -15,13 +15,14 @@ public class ProduitPerime extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        setContentView(R.layout.activity_voir_placard);
         ListView liste = (ListView) findViewById(R.id.listefrigo);
         final List<Produit> produits =  recupereProduitBase();
 
 
         MonAdapter adapter = new MonAdapter(produits,this);
         liste.setAdapter(adapter);
-        setContentView(R.layout.activity_voir_placard);
     }
 
 
@@ -29,9 +30,6 @@ public class ProduitPerime extends AppCompatActivity {
     public List<Produit> recupereProduitBase(){
         ProduitDAO produitDAO =new ProduitDAO(this);
         List<Produit> produits=produitDAO.recupereProduitPerimee();
-
-
-
         return produits;
     }
 }

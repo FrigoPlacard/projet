@@ -28,6 +28,9 @@
         android:layout_weight="0.2"
         android:onClick="cliqueVisite"
         android:id="@+id/boutonvisite" />
+    <Space
+        android:layout_width="16dp"
+        android:layout_height="8dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -36,6 +39,11 @@
         android:layout_weight="0.2"
         android:onClick="cliqueListe"
         android:id="@+id/boutoncourses"/>
+    <Space
+        android:layout_width="16dp"
+        android:layout_height="8dp" />
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,12 +51,8 @@
         android:layout_weight="0.2"
         android:onClick="cliquePerime"
         android:id="@+id/boutonperim"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/recettes"
-        android:layout_weight="0.2"
-        android:id="@+id/boutonrecettes"/>
+
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

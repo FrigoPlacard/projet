@@ -3,6 +3,7 @@
     package="com.example.ensai.frigomalin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -34,6 +35,13 @@
         <activity android:name=".Ajout_element_courses" />
         <activity android:name=".ListeCours" />
         <activity android:name=".ProduitPerime"></activity>
+
+        <receiver android:name="BootReceiver">
+            <intent-filter>
+                <action android:name="ccom.example.ensai.frigomalin"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
