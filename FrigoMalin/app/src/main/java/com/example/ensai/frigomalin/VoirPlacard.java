@@ -54,7 +54,7 @@ public class VoirPlacard extends AppCompatActivity {
                 ProduitDAO prod = new ProduitDAO(this);
                 prod.deleteAll();
                 finish();
-                Toast.makeText(VoirPlacard.this, "@strings/pvide", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VoirPlacard.this, R.string.pvide, Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
