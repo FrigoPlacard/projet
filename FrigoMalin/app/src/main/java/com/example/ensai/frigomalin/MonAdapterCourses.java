@@ -59,9 +59,9 @@ public class MonAdapterCourses extends BaseAdapter {
         Produit element= (Produit) getItem(position);
 
         TextView nom = (TextView) v.findViewById(R.id.nom_produit_c);
-        TextView quantite = (TextView) v.findViewById(R.id.quantite_produit_c);
+        //TextView quantite = (TextView) v.findViewById(R.id.quantite_produit_c);
         nom.setText(element.getNom());
-        quantite.setText(element.getQuantite()+"");
+        //quantite.setText(element.getQuantite()+"");
 
 
         return v;

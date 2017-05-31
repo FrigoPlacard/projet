@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ajouter"
         android:id="@+id/boutonajouter"
-        android:onClick="ajouter_prod"
+        android:onClick="ajouter"
         android:background="@color/colorAccent"/>
 
 

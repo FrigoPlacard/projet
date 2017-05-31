@@ -15,6 +15,7 @@ import com.example.ensai.frigomalin.DAO.CoursesDAO;
 import com.example.ensai.frigomalin.DAO.ProduitDAO;
 import com.example.ensai.frigomalin.metier.Produit;
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.List;
 
@@ -81,6 +82,23 @@ public class ListeCours extends AppCompatActivity {
         }
     }
 
+
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanningResult != null) {
+            String scanContent = scanningResult.getContents();
+            Intent i = new Intent(this, LireURLcourse.class);
+            i.putExtra("code",scanContent);
+            startActivity(i);
+            finish();
+        }
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No scan data received!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.add(0,v.getId(),0,R.string.supprimer);
