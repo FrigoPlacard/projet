@@ -136,8 +136,6 @@ public class VoirProduit extends AppCompatActivity {
             produit = new Produit(nom, quantite+1, date, categorie, url, id);
             CoursesDAO coursesDAO = new CoursesDAO(this);
             coursesDAO.create(produit);
-
-            startActivity(new Intent(VoirProduit.this,VoirPlacard.class));
             Toast.makeText(VoirProduit.this, "Produit supprimé", Toast.LENGTH_SHORT).show();
 
         }
